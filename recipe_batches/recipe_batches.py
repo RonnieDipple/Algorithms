@@ -26,7 +26,7 @@ def recipe_batches(recipe, ingredients):
   return totalCount[0]
 
 
-    #so the recipe comes in saying we need this many and type of ingredient for the recipe
+    # so the recipe comes in saying we need this many and type of ingredient for the recipe
     # then we do a for loop over the ingredients dictionary looking for the ingredient that the recipe wants
     # if we don't have enough ingredients or they don't exist in the ingredient dictionary return 0
     # if we can make the recipe, return the amount of times it can be made

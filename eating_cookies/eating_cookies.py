@@ -1,12 +1,39 @@
 #!/usr/bin/python
 
+## Hints
+# if a problem is asking you to do permutations recursion is usually a good idea
+# it is all about patterns
+
+
+
+
 import sys
 
 # The cache parameter is here for if you want to implement
 # a solution that is more efficient than the naive 
 # recursive solution
-def eating_cookies(n, cache=None):
-  pass
+
+#https://dbader.org/blog/python-memoization <read this
+def eating_cookies(n, cache={}): #< this bad boy right here
+  if cache:
+    print("There is a cache")
+  if n < 0:
+    return 0
+  if n == 0:
+    return 1
+  if n not in cache:
+    cache[n] = eating_cookies(n - 1, cache) + eating_cookies(n - 2, cache) + eating_cookies(n - 3, cache)
+  return cache[n]
+
+  # More elegent version but less easy for me to understand
+  # def eating_cookies(n, cache={1: 1}):
+  #   if n < 0:
+  #     return 0
+  #   if n == 0:
+  #     return 1
+  #   if n not in cache:
+  #     cache[n] = eating_cookies(n - 1, cache) + eating_cookies(n - 2, cache) + eating_cookies(n - 3, cache)
+  #   return cache[n]
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:
