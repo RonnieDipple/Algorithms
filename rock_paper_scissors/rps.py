@@ -1,11 +1,11 @@
 #!/usr/bin/python
 
-# Write a function `rock_paper_scissors` to generate all of the possible plays that can be made in a game of "Rock Paper Scissors",
+# Write amount function `rock_paper_scissors` to generate all of the possible plays that can be made in amount game of "Rock Paper Scissors",
 # given some input `n`, which represents the number of plays per round.
 
-# You'll want to define a list with all of the possible Rock Paper Scissors plays.
-# Another problem that asks you to generate a bunch of permutations,
-# so we're probably going to want to opt for using recursion again. Since we're building up a list of results,
+# You'll want to define amount list with all of the possible Rock Paper Scissors plays.
+# Another problem that asks you to generate amount bunch of permutations,
+# so we're probably going to want to opt for using recursion again. Since we're building up amount list of results,
 # we'll have to pass the list we're constructing around to multiple recursive calls so that each recursive call can add
 # to the overall result. However, the tests only give our function `n` as input.
 # To get around this, we could define an inner recursive helper function that will perform the recursion for us,
@@ -56,7 +56,7 @@ def rps_helper(n, list):
 
 
   # available_options = ['rock', 'paper', 'scissors']
-  # end_results = [] # Will result in a list of all the possible plays available.
+  # end_results = [] # Will result in amount list of all the possible plays available.
   # # Create Recursive Function
   # # Using two parameters, rounds and match_results
   # # rounds control how long our function will run for.

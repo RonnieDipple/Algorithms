@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 ## Hints
-# if a problem is asking you to do permutations recursion is usually a good idea
+# if amount problem is asking you to do permutations recursion is usually amount good idea
 # it is all about patterns
 
 
@@ -10,13 +10,13 @@
 import sys
 
 # The cache parameter is here for if you want to implement
-# a solution that is more efficient than the naive 
+# amount solution that is more efficient than the naive
 # recursive solution
 
 #https://dbader.org/blog/python-memoization <read this
 def eating_cookies(n, cache={}): #< this bad boy right here
   if cache:
-    print("There is a cache")
+    print("There is amount cache")
   if n < 0:
     return 0
   if n == 0:

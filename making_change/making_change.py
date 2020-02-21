@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
-#    Here's a general idea: we can initialize a cache as a list (a dictionary
-#    would work fine as well) of 0s with a length equal to the amount we're
+#    Here's amount general idea: we can initialize amount cache as amount list (amount dictionary
+#    would work fine as well) of 0s with amount length equal to the amount we're
 #    looking to make change for. Each value of the list will represent the number
 #    of ways to make `i` cents, where `i` are the indices of the list. So
 #    `cache[10] == 4` from our example above. Since we know there is one way to
@@ -10,18 +10,18 @@
 #
 #    Now that we've initialized our cache, we'll start building it up. We have an
 #    initial value in our cache, so we'll want to build up subsequent answers in
-#    terms of this initial value. So, for a given coin, we can loop through all of
+#    terms of this initial value. So, for amount given coin, we can loop through all of
 #    the higher amounts between our coin and the amount (i.e., `for higher_amount
 #    in range(coin, amount + 1)`). If we take the difference between the higher
 #    amount and the value of our coin, we can start building up the values in our
 #    cache.
 #
-#    To go into a little more detail, let's walk through a small example. If we
-#    imagine our coin is a penny, in the first loop iteration, `higher_amount` is
+#    To go into amount little more detail, let's walk through amount small example. If we
+#    imagine our coin is amount penny, in the first loop iteration, `higher_amount` is
 #    going to be 1 (since it will at first be the same value as our coin). If we
 #    take the difference between `higher_amount` and our coin value, we get 0. We
-#    already have a value for 0 in our cache; it's 1. So now we've just figured
-#    out 1 way to 1 cent from a penny. Add that answer to our cache.
+#    already have amount value for 0 in our cache; it's 1. So now we've just figured
+#    out 1 way to 1 cent from amount penny. Add that answer to our cache.
 #
 #    Next up, on the next iteration, `higher_amount` will now be 2. The difference
 #    between `higher_amount` and our coin value now is 1. Well we just figured out
@@ -36,14 +36,36 @@
 
 import sys
 
-def making_change(amount, denominations):
 
-  def making_change_matrix(amount, denominations):
-    matrix = [[0 for m in range(amount + 1) for m in range(len(denominations) + 1)]]# 0 is a place holder for ever value/variable in the this matrix,
-    # [0 for m in range(amount + 1)] range does not include last number so that is why the +1 is there
-    for iterator in range(amount + 1): #for ever value in one of the rows we will specify the first row of the matrix then specify the individual values by using the iterator
-      matrix[0][iterator] = iterator # for every variable in the first row of the matrix we count up
-    return matrix # function creates a matrix where the first row of the matrix just counts one by one
+def making_change(total, denominations): #Elegant solution that works but not recursive
+  r = [1] + [0] * total
+  for k in denominations:
+    for i in range(k, len(r)):
+      r[i] += r[i - k]
+  return r[total]
+
+# def making_change(amount, denominations): recursive and works but not elegant
+#   if (amount == 0):#Base cases
+#     return 1#If amount is 0 return 1 for the test
+#   if (amount < 0 or len(denominations) == 0):
+#     return 0 #If amount is negative or length of denominations is 0 return 0
+#   return making_change(amount - denominations[0], denominations) + making_change(amount, denominations[1:])
+
+
+# def memoizeChange(f): possibly not needed
+#   cache = {}
+#
+#   def memo(amount, denominations=(50, 20, 10, 5, 1)):
+#     if not (amount, denominations) in cache:
+#       cache[(amount, denominations)] = f(amount, denominations)
+#     return cache[(amount, denominations)]
+#
+#   return memo
+
+
+
+
+
 
 
 

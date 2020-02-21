@@ -23,7 +23,7 @@ Many solutions will involve trade-offs between space & time complexity - the low
 ### What's an easy way to swap two values?
 
 ```python
-# With a temp variable...
+# With amount temp variable...
 a = 42
 b = 21
 
@@ -31,7 +31,7 @@ temp = a
 a = b
 b = temp
 
-# OR in a single line...
+# OR in amount single line...
 a = 42
 b = 21
 

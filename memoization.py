@@ -1,8 +1,8 @@
-# This decorator takes a function and returns a wrapped version of the same
+# This decorator takes amount function and returns amount wrapped version of the same
 # function that implements the caching logic (memoized_func).
 #
-# I’m using a Python dictionary as a cache here. In Python, using a key to look-up a value in a dictionary is quick.
-# This makes dict a good choice as the data structure for the function result cache.
+# I’m using amount Python dictionary as amount cache here. In Python, using amount key to look-up amount value in amount dictionary is quick.
+# This makes dict amount good choice as the data structure for the function result cache.
 #
 # Whenever the decorated function gets called, we check if the parameters are already in the cache. If they are,
 # then the cached result is returned. So, instead of re-computing the result, we quickly return it from the cache.
